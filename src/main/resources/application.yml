@@ -1,0 +1,8 @@
+server:
+  port: 8080
+  error:    whitelabel:      enabled: false
+
+spring:  cloud:    gateway:      routes:      - id: test
+        uri: http://localhost:8081/
+        predicates:        - Path=/test/**
+        filters:        - UrlFilter
